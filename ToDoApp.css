@@ -1,0 +1,227 @@
+/* ToDoApp.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: serif;
+    
+}
+
+
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: lightblue;
+    padding: 10px;
+    position: absolute;
+    
+}
+
+
+
+.todo {
+    width: 50%;
+    max-width: 540px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+
+
+}
+
+h2 {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 2px;
+    display: inline-flex;
+    align-items: center; /* Aligns the text and image on the same line */
+    margin: 0;
+}
+
+.todo:hover {
+    box-shadow: 0 8px 16px goldenrod;
+}
+
+.todoimage {
+    width: 60px;
+    height: 40px;
+    vertical-align: middle;
+    margin-left: 3px; /* Reduces the gap between the text and image */
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:rgb(247, 240, 240);
+    border-radius: 30px;
+    padding: 10px 0 10px 20px;
+    margin-bottom: 25px;
+    margin-top:20px;
+    height: 30px;
+}
+
+input{
+    flex:1;
+    border:none;
+    outline: none;
+    background: transparent;
+    font-weight: 14px;
+    padding: 10px;
+}
+
+button{
+    border:none;
+    outline: none;
+    background: orangered;
+    color: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px 25px;
+
+
+}
+ul li {
+    list-style: none;
+    font-size: 17px;
+    user-select: none;
+    padding: 10px 0 10px 40px; /* Ensure space for the icon */
+    cursor: pointer;
+    position: relative;
+    display: flex; /* Flexbox for proper alignment */
+    align-items: center;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    left: 10px; /* Adjust icon position */
+    background-image: url(circle.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.task-text {
+    margin-left: 10px; /* Space between icon and text */
+}
+
+ul li.checked {
+    color: grey;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(checkedCircle.png); /* Change icon when checked */
+}
+.delete-icon {
+    position: absolute;
+    right: 10px; /* Adjusted spacing from the right */
+    top: 5px;
+    width: 25px; /* Slightly increased for better visibility */
+    height: 25px;
+    font-size: 18px; /* Adjusted font size */
+    color: #555;
+    line-height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.delete-icon:hover {
+    background: #edeef0; 
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .todo {
+        width: 80%;
+        padding: 30px 20px 60px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .todoimage {
+        width: 40px;
+        height: 30px;
+    }
+
+    .row {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    ul li {
+        font-size: 15px;
+        
+    }
+    ul li.checked {
+        color: grey;
+        text-decoration: line-through;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo {
+        width: 90%;
+        padding: 20px 15px 50px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .todoimage {
+        width: 35px;
+        height: 25px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px;
+        width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 14px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    ul li {
+        font-size: 14px;
+        
+    }
+    ul li.checked {
+        color: grey;
+        text-decoration: line-through;
+    }
+}
+
